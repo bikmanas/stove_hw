@@ -1,3 +1,88 @@
+body,
+body * {
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 body{
     background-color: aqua;
+    height: 100vh;
 }
+
+.stove{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 300px;
+    padding: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: pink;
+}
+.stove > .top-left{
+    background-color: #fff;
+    grid-column: span 2;
+    text-align: center;
+    font-size: 35px;
+    padding: 40%;
+    border-radius: 30px;
+    align-items: center;
+}
+.stove > .top-right{
+    background-color: #fff;
+    grid-column: span 2;
+    text-align: center;
+    font-size: 35px;
+    padding: 40%;
+    border-radius: 30px;
+    align-items: center;
+}
+.stove > .bottom-left{ 
+    background-color: #fff;
+    grid-column: span 2;
+    text-align: center;
+    font-size: 35px;
+    padding: 40%;
+    border-radius: 30px;
+    align-items: center;
+}
+.stove > .bottom-right{
+    background-color: #fff;
+    grid-column: span 2;
+    text-align: center;
+    font-size: 35px;
+    padding: 40%;
+    margin-top: 2px;
+    border-radius: 30px;
+}
+
+.stove > .key {
+    display: inline-block;
+    height: 20px;
+    min-width: 25px;
+    background-color: #fff;
+    border-radius: 30px;
+    position: relative;
+    row-gap: 15px;
+    margin-top: 20px;
+}
+
+.stove > .key::before{
+    content:attr(data-symbol);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+
+
