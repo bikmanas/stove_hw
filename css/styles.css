@@ -23,9 +23,9 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
-    background-color: pink;
+    background-color: black;
 }
-.stove > .top-left{
+.stove > .plates1{
     background-color: #fff;
     grid-column: span 2;
     text-align: center;
@@ -34,7 +34,7 @@ body{
     border-radius: 30px;
     align-items: center;
 }
-.stove > .top-right{
+.stove > .plates2{
     background-color: #fff;
     grid-column: span 2;
     text-align: center;
@@ -43,7 +43,7 @@ body{
     border-radius: 30px;
     align-items: center;
 }
-.stove > .bottom-left{ 
+.stove > .plates3{
     background-color: #fff;
     grid-column: span 2;
     text-align: center;
@@ -52,14 +52,14 @@ body{
     border-radius: 30px;
     align-items: center;
 }
-.stove > .bottom-right{
+.stove > .plates4{
     background-color: #fff;
     grid-column: span 2;
     text-align: center;
     font-size: 35px;
     padding: 40%;
-    margin-top: 2px;
     border-radius: 30px;
+    align-items: center;
 }
 
 .stove > .key {
@@ -71,6 +71,22 @@ body{
     position: relative;
     row-gap: 15px;
     margin-top: 20px;
+}
+
+.stove > .key.green{
+    background-color: green;
+}
+.stove > .plates1.active{
+    background-color: rgba(255, 208, 0, 0.795);
+}
+.stove > .plates2.active{
+    background-color: rgba(255, 208, 0, 0.795);
+}
+.stove > .plates3.active{
+    background-color: rgba(255, 208, 0, 0.795);
+}
+.stove > .plates4.active{
+    background-color: rgba(255, 208, 0, 0.795);
 }
 
 .stove > .key::before{

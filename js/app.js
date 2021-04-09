@@ -1,5 +1,6 @@
 //Susirandame vieta: 
 const DOM = document.querySelector('.stove');
+// const platesDOM = DOM.querySelector('.plates');
 
 
 //Sukuriame turini: 
@@ -18,7 +19,16 @@ DOM.insertAdjacentHTML('beforeend', HTML);
 
 //Susirandame sukurtus mygtukus:
 const switches = document.querySelectorAll('.key');
-console.log(switches);
+
+for (let i = 0; i < switches.length; i++){
+    const sw = switches[i];
+    
+    sw.addEventListener('click', function (){
+        sw.classList.toggle('green');
+    })
+}
+
+
 
 
 
