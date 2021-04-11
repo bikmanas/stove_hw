@@ -1,32 +1,47 @@
 //Susirandame vieta: 
-const DOM = document.querySelector('.stove');
-// const platesDOM = DOM.querySelector('.plates');
+const plates = document.querySelector('.plates');
+const num = ['1', '2', '3', '4'];
 
-
-//Sukuriame turini: 
-
-const symbols = ['1', '2', '3', '4'];
 
 let HTML = '';
 
-for (let i = 0; i < symbols.length; i++){
-    HTML += `<div class="key" data-symbol="${symbols[i]}"></div>`;
+for (let i = 0; i < num.length; i++){
+    HTML += `<div class="heat" data-number="${num[i]}"></div>`;
 }
 
-//Istatome turini i vieta:
 
-DOM.insertAdjacentHTML('beforeend', HTML);
+plates.innerHTML = HTML;
 
-//Susirandame sukurtus mygtukus:
-const switches = document.querySelectorAll('.key');
+const switches = document.querySelector('.switches');
+const press = ['1', '2', '3', '4'];
 
-for (let i = 0; i < switches.length; i++){
-    const sw = switches[i];
-    
-    sw.addEventListener('click', function (){
-        sw.classList.toggle('green');
-    })
+HTML = '';
+
+for (let i = 0; i < press.length; i++){
+    HTML += `<div class="button" data-button="${press[i]}"></div>`;
 }
+
+switches.innerHTML = HTML;
+
+const controlButtons = document.querySelectorAll('.button');
+
+for (let i = 0; i < controlButtons.length; i++){
+    const controlButton = controlButtons[i];
+    const controlButtonNum = controlButton.dataset.button;
+
+    controlButton.addEventListener('click', function(){
+        const heats = document.querySelectorAll('.heat');
+
+        for(let i = 0; i < heats.length; i++){
+            const heat = heats[i];
+            const heatNum = heat.dataset.number;
+            if(controlButtonNum === heatNum){
+                heat.classList.toggle('active');
+            }
+        }
+    });
+}
+
 
 
 

@@ -13,9 +13,7 @@ body{
 }
 
 .stove{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    display: inline-block;
     width: 300px;
     padding: 25px;
     position: absolute;
@@ -25,72 +23,67 @@ body{
     border-radius: 10px;
     background-color: black;
 }
-.stove > .plates1{
-    background-color: #fff;
-    grid-column: span 2;
-    text-align: center;
+.stove > .plates{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
     font-size: 35px;
-    padding: 40%;
-    border-radius: 30px;
-    align-items: center;
-}
-.stove > .plates2{
-    background-color: #fff;
-    grid-column: span 2;
-    text-align: center;
-    font-size: 35px;
-    padding: 40%;
-    border-radius: 30px;
-    align-items: center;
-}
-.stove > .plates3{
-    background-color: #fff;
-    grid-column: span 2;
-    text-align: center;
-    font-size: 35px;
-    padding: 40%;
-    border-radius: 30px;
-    align-items: center;
-}
-.stove > .plates4{
-    background-color: #fff;
-    grid-column: span 2;
-    text-align: center;
-    font-size: 35px;
-    padding: 40%;
-    border-radius: 30px;
-    align-items: center;
+    color: #fff;
 }
 
-.stove > .key {
+.stove > .plates > div{
     display: inline-block;
-    height: 20px;
-    min-width: 25px;
-    background-color: #fff;
-    border-radius: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    padding: 40%;
+    background-color: gray;
+    border-radius: 50%;
     position: relative;
-    row-gap: 15px;
-    margin-top: 20px;
 }
 
-.stove > .key.green{
-    background-color: green;
-}
-.stove > .plates1.active{
-    background-color: rgba(255, 208, 0, 0.795);
-}
-.stove > .plates2.active{
-    background-color: rgba(255, 208, 0, 0.795);
-}
-.stove > .plates3.active{
-    background-color: rgba(255, 208, 0, 0.795);
-}
-.stove > .plates4.active{
-    background-color: rgba(255, 208, 0, 0.795);
+.stove > .plates > div.active{
+    background-color: red;
 }
 
-.stove > .key::before{
-    content:attr(data-symbol);
+.stove > .switches{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.stove > .switches > div {
+    display: inline-block;
+    text-align: center;
+    font-size: 15px;
+    grid-column: span 2;
+    width: 60px;
+    height: 30px;
+    
+    background-color: #fff;
+    border-radius: 50%;
+    position: relative;
+}
+
+.stove > .switches > div.red{
+    background-color: red;
+}
+
+
+.stove > .plates > div::before{
+    content:attr(data-number);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.stove > .switches > div::before{
+    content:attr(data-button);
     position: absolute;
     top: 50%;
     left: 50%;
