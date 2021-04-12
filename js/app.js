@@ -24,23 +24,18 @@ for (let i = 0; i < press.length; i++){
 switches.innerHTML = HTML;
 
 const controlButtons = document.querySelectorAll('.button');
+const heats = document.querySelectorAll('.heat');
 
-for (let i = 0; i < controlButtons.length; i++){
+for(let i = 0; i < heats.length; i++){
     const controlButton = controlButtons[i];
-    const controlButtonNum = controlButton.dataset.button;
-
+    const heat = heats[i];
     controlButton.addEventListener('click', function(){
-        const heats = document.querySelectorAll('.heat');
-
-        for(let i = 0; i < heats.length; i++){
-            const heat = heats[i];
-            const heatNum = heat.dataset.number;
-            if(controlButtonNum === heatNum){
-                heat.classList.toggle('active');
-            }
-        }
+            heat.classList.toggle('active');
+            controlButton.classList.toggle('green');  
     });
 }
+
+
 
 
 

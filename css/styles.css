@@ -63,14 +63,14 @@ body{
     grid-column: span 2;
     width: 60px;
     height: 30px;
-    
+    border: 2px solid red;
     background-color: #fff;
     border-radius: 50%;
     position: relative;
 }
 
-.stove > .switches > div.red{
-    background-color: red;
+.stove > .switches > div.green{
+    background-color: green;
 }
 
 
