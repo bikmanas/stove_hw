@@ -46,6 +46,7 @@ body{
 
 .stove > .plates > div.active{
     background-color: red;
+    
 }
 
 .stove > .switches{
@@ -67,6 +68,7 @@ body{
     background-color: #fff;
     border-radius: 50%;
     position: relative;
+    
 }
 
 .stove > .switches > div.green{
